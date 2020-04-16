@@ -15,12 +15,18 @@ public class MenuClub extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_club);
 
+        final ConexioSQLiteHelper conn=new ConexioSQLiteHelper(this);
+
+/*
         llistaJugadors=findViewById(R.id.listViewId);
 
         ArrayAdapter<CharSequence> adaptador= ArrayAdapter.createFromResource(this,R.array.arrayJugadors,
                 android.R.layout.simple_list_item_1);
 
         llistaJugadors.setAdapter(adaptador);
+*/
+
+
 
     }
 }
