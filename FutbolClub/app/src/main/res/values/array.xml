@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="arrayJugadors">
+    <string-array name="arrayEquips">
         <item>nom1</item>
         <item>nom2</item>
         <item>nom3</item>

@@ -3,10 +3,8 @@ package com.example.futbolclub;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -40,7 +38,7 @@ public class CrearClub extends AppCompatActivity {
         setContentView(R.layout.activity_crear_club);
 
         //referencias de la interface buttons
-        insertar = findViewById(R.id.btnEntrarClub);
+        insertar = findViewById(R.id.btnAgregar);
         menu = findViewById(R.id.btnMenu);
         //referencias de la interface texts
         final EditText nomEquip = findViewById(R.id.txtNomClub);
@@ -89,7 +87,7 @@ public class CrearClub extends AppCompatActivity {
         @RequiresApi(api = Build.VERSION_CODES.KITKAT)
         @Override
         protected String doInBackground(String... params) {
-            String registrar_url = "http://192.168.1.22/projecte_futbol/crear_equips.php";
+            String registrar_url = "http://localhost/projecte_futbol/crear_equips.php";
             String resultat;
 
             try
@@ -158,7 +156,6 @@ public class CrearClub extends AppCompatActivity {
             Toast.makeText(context.get(), resultat, Toast.LENGTH_LONG).show();
         }
     }
-
 
 
 }
