@@ -37,6 +37,8 @@ public class LoginEquip extends AppCompatActivity {
     public static final int CONNECTION_TIMEOUT=10000;
     public static final int READ_TIMEOUT=15000;
 
+    public static String nom = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,7 +53,7 @@ public class LoginEquip extends AppCompatActivity {
     public void checkLogin(View arg0) {
 
         // Get text from email and password field
-        final String nom = nomEquip.getText().toString();
+        nom = nomEquip.getText().toString();
         final String password = passwordEquip.getText().toString();
 
         // Initialize  AsyncLogin() class with email and password
@@ -166,7 +168,7 @@ public class LoginEquip extends AppCompatActivity {
                 /* Here launching another activity when login successful. If you persist login state
                 use sharedPreferences of Android. and logout button to clear sharedPreferences.
                  */
-                Toast.makeText(LoginEquip.this, "correcte", Toast.LENGTH_LONG).show();
+                //Toast.makeText(LoginEquip.this, "Correcte", Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(LoginEquip.this, MenuEquip.class);
                 startActivity(intent);
                 LoginEquip.this.finish();
