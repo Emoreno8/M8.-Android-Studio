@@ -10,14 +10,17 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content">
 
+
+        <CalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFEB3B"
+            android:color="#C7A2A2"
+            android:radius="10dp" />
+
     </LinearLayout>
 
-    <CalendarView
-        android:id="@+id/calendarView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#FFF"
-        android:color="#C7A2A2"
-        android:radius="10dp" />
+
 
 </LinearLayout>

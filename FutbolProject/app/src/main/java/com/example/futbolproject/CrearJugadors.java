@@ -34,8 +34,10 @@ public class CrearJugadors extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crear_jugadors);
 
-        final EditText txtDorsal = findViewById(R.id.editText3);
-        final EditText txtNomJugador = findViewById(R.id.editText4);
+        final EditText txtDorsal = findViewById(R.id.editDorsal);
+        final EditText txtNomJugador = findViewById(R.id.editNomJugador);
+        final EditText txtMail = findViewById(R.id.editMail);
+        final String nomClub = LoginEquip.nom;
 
         final Button btnJugador = findViewById(R.id.button4);
 
@@ -46,8 +48,9 @@ public class CrearJugadors extends AppCompatActivity {
                 //String nomEquip;
                 String dorsal = txtDorsal.getText().toString();
                 String nomJugador = txtNomJugador.getText().toString();
+                String mail = txtMail.getText().toString();
 
-                new CrearJugadors.DescarregaImatge(CrearJugadors.this).execute(dorsal, nomJugador);
+                new CrearJugadors.DescarregaImatge(CrearJugadors.this).execute(nomJugador, mail, nomClub, dorsal);
             }
         });
 
@@ -86,11 +89,15 @@ public class CrearJugadors extends AppCompatActivity {
 
                 BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, StandardCharsets.UTF_8));
 
-                String dorsal = params[0];
-                String nomJugador = params[1];
+                String nomJugador = params[0];
+                String mail = params[1];
+                String nomClub = params[2];
+                String dorsal = params[3];
 
-                String data = URLEncoder.encode("dorsal", "UTF-8") + "=" + URLEncoder.encode(dorsal, "UTF-8") + "&"
-                        + URLEncoder.encode("nom", "UTF-8") + "=" + URLEncoder.encode(nomJugador, "UTF-8");
+                String data = URLEncoder.encode("nom", "UTF-8") + "=" + URLEncoder.encode(nomJugador, "UTF-8") + "&"
+                    + URLEncoder.encode("mail", "UTF-8") + "=" + URLEncoder.encode(mail, "UTF-8") + "&"
+                    + URLEncoder.encode("club", "UTF-8") + "=" + URLEncoder.encode(nomClub, "UTF-8") + "&"
+                        + URLEncoder.encode("dorsal", "UTF-8") + "=" + URLEncoder.encode(dorsal, "UTF-8");
 
 
                 bufferedWriter.write(data);

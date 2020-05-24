@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 public class MenuEquip extends AppCompatActivity {
 
-    Button actJugadors;
+    Button actJugadors, actCalendari;
 
     TextView Equip;
 
@@ -24,6 +24,7 @@ public class MenuEquip extends AppCompatActivity {
         Equip.setText(nomEquip);
 
         actJugadors = findViewById(R.id.button5);
+        actCalendari = findViewById(R.id.button6);
 
         actJugadors.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -32,12 +33,18 @@ public class MenuEquip extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        actCalendari.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MenuEquip.this, CalendarActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 
     public void Jugadors(){
-
-
 
 
 
